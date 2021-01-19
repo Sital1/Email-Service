@@ -159,6 +159,12 @@ def register(request):
         # Ensure password matches confirmation
         password = request.POST["password"]
         confirmation = request.POST["confirmation"]
+
+        if(len(password)< 6):
+             return render(request, "mail/register.html", {
+                "message": "Passwords must be at least 6 character.."
+            })
+
         if password != confirmation:
             return render(request, "mail/register.html", {
                 "message": "Passwords must match."
