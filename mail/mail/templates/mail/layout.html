@@ -11,21 +11,28 @@
         {% endblock %}
     </head>
     <body>
-        <div class="navbar navbar-expand-md navbar-light" style="padding: 12px 32px">
+        <div class="navbar navbar-expand-sm navbar-light" style="padding: 12px 32px">
             <a class="navbar-brand" href="{% url 'index' %}" style="color: #606060; margin-right: 38px">
                 Mail
             </a>
             {% if request.user.is_authenticated %}
                 <button class="compose-btn" id="compose"><span class="plus-sign"></span>Compose</button>
+                    <ul class="navbar-nav">
+                        
+                        <li class = "nav-item dropdown"> 
+                            <a class="nav-link dropdown-toggle" data-toggle="dropdown" data-target = "dropdown_target" href="#">
+                                Account
+                            <span class="caret"></span>
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-left" aria-labelledby="dropdown_target"><a class = "dropdown-item">{{ request.user.email }}</a>
+                            <a class = "dropdown-item white-btn btn btn-sm" href="{% url 'logout' %}">Log Out</a></div>
+                        </li>
 
-                <div class="collapse navbar-collapse" id="responsiveDropdown">
-                    {# Left Side links #}
-                    <ul class="navbar-nav mr-auto">
                     </ul>
-                    {# Right side user email and logout button #}
-                    <div class="nav-link" style="color: #3c4043; font-weight: 500">{{ request.user.email }}</div>
+                   
+                    <!-- <div class="nav-link" style="color: #3c4043; font-weight: 500">{{ request.user.email }}</div>
                     <a class="white-btn btn btn-sm" href="{% url 'logout' %}">Log Out</a>
-                </div>
+               -->
             {% endif %}
         </div>
 

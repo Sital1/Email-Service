@@ -3,7 +3,12 @@
 
 {% block body %}
 <nav class="navbar navbar-expand-md navbar-light">
-    <div class="collapse navbar-collapse justify-content-md-center" id="responsiveDropdown">
+
+    <button class = "navbar-toggler" data-toggle = "collapse" data-target = "#data_collapse">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="data_collapse">
         <ul class="navbar-nav">
             <li class="nav-item">
                 <button class="nav-btn" id="inbox"><i class="ri-inbox-fill ri-1x">Inbox</i></button>

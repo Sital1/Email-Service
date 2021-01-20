@@ -40,7 +40,6 @@ document.addEventListener('DOMContentLoaded', async function() {
 
           if(result.error)
           {
-            console.log(result.error)
             msg.style.color = "red"
             msg.innerHTML = ""
             msg.innerHTML = result.error
@@ -70,12 +69,12 @@ async function getMail()
   try{
     const res = await fetch(`/emails/${mailbox}`)
     const data = await res.json()
-    //console.log(data)
+    
     return data
   }
   catch(e)
   {
-    //console.log(e)
+    console.error(e)
   }
 }
 
@@ -87,12 +86,10 @@ function display(mailbox)
 {
   if(data.length != 0)
 {
-  console.log(data)
   const element = document.querySelector('#emails-view')
 
   for (let i =0; i<data.length;i++)
   {
-    console.log(data[i].body)
     const mail = document.createElement('div')
     mail.style.margin = "10px"
     mail.style.border = "thin solid black"
