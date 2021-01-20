@@ -20,8 +20,7 @@ You can vist the CS50 specification page [Here](https://cs50.harvard.edu/web/202
 
  
 ## Compose, Reply, Archive, Inbox, Sent
-
-![Compose, Reply, Archive, Inbox, Sent](Gifs/compose and inbox.gif)
+![Compose,reply,Archive,Inbox,Sent](Gifs/compose.gif)
 
 # Architecture
 
